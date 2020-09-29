@@ -7,9 +7,9 @@ import re
 url = "http://35.222.198.14/fruits/"
 dict_o_dicts = {}
 
-for feed in os.listdir("~/supplier-data/images/"):
+for feed in os.listdir("../supplier-data/images/"):
         dict_o_dicts[feed] = {}
-        with open(("~/supplier-data/images/"+feed), mode='r', encoding='UTF-8') as file:
+        with open(("../supplier-data/images/"+feed), mode='r', encoding='UTF-8') as file:
                 dict_o_dicts[feed]["name"] = file.readline().rstrip()
                 dict_o_dicts[feed]["weigth"] = int(re.search(r'\d+', file.readline().rstrip()).group())
                 dict_o_dicts[feed]["description"] = file.readline().rstrip()
