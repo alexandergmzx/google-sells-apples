@@ -16,9 +16,9 @@ for feed in os.listdir("../supplier-data/descriptions/"):
 		dict_o_dicts[feed]["description"] = file.readline().rstrip()
 		img_num += 1
 		if img_num < 10:
-			dict_o_dicts[feed]["image_name"] = "0"+str(img_num)+".jpeg"
+			dict_o_dicts[feed]["image_name"] = "0"+str(int(re.search(r'\d+', feed).group()))+".jpeg"
 		else:
-			dict_o_dicts[feed]["image_name"] = "00"+str(img_num)+".jpeg"
+			dict_o_dicts[feed]["image_name"] = "0"+str(int(re.search(r'\d+', feed).group()))+".jpeg"
 	print(dict_o_dicts[feed])
 	response = requests.post(url, data=dict_o_dicts[feed])
 	response.raise_for_status()
