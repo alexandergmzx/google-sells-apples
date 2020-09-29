@@ -17,6 +17,5 @@ for feed in os.listdir("../supplier-data/images/"):
         response = requests.post(url, data=dict_o_dicts[feed])
         response.raise_for_status()
 
-print(dict_o_dicts)
-f = open(filename,'w')
-print('whatever', file=f) 
+with open('../dict_o_dicts.json', 'w') as outfile:
+    json.dump(dict_o_dicts, outfile)
