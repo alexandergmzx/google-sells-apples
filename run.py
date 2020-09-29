@@ -4,7 +4,7 @@ import requests
 import json
 import re
 
-url = "http://35.222.198.14/fruits/"
+url = "http://35.222.198.14/fruits"
 dict_o_dicts = {}
 
 for feed in os.listdir("../supplier-data/descriptions/"):
