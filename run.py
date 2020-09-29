@@ -20,7 +20,7 @@ for feed in os.listdir("../supplier-data/descriptions/"):
 		else:
 			dict_o_dicts[feed]["image_name"] = "0"+str(int(re.search(r'\d+', feed).group()))+".jpeg"
 	print(dict_o_dicts[feed])
-	response = requests.post(url, data=(dict_o_dicts[feed]))
+	response = requests.post(url, json=json.dumps(dict_o_dicts[feed]))
 	print(response)
 	response.raise_for_status()
 
