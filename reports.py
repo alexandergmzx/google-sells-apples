@@ -21,7 +21,7 @@ def generate(filename, title, additional_info):
   report_title = Paragraph(title, styles["h1"])
   report_info = Paragraph(additional_info, styles["BodyText"])
   empty_line = Spacer(1,20)
-  report.build([report_title, empty_line, report_info, empty_line])
+  report.build([report_title, report_info])
 
 def load_data(filename):
   """Loads the contents of filename as a JSON file."""
@@ -39,8 +39,8 @@ def process_data(data):
   #data_list = []
   data_string = ""
   for value in data.values():
-    data_string += "name: " + value["name"] + "<br/>" + \
-                  "weigth: " + str(value["weigth"]) + " lbs" + "<br/>" + "<br/>"
+    data_string += "<br/>" + "<br/>" + "name: " + value["name"] + \
+      "<br/>" + "weigth: " + str(value["weigth"]) + " lbs"
     #data_list.append(data_string)
   return data_string
 

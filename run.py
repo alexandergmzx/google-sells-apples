@@ -4,7 +4,7 @@ import requests
 import json
 import re
 
-url = "http://35.222.198.14/fruits/"
+url = "http://??/fruits/"
 dict_o_dicts = {}
 
 for feed in os.listdir("../supplier-data/descriptions/"):
@@ -20,7 +20,7 @@ for feed in os.listdir("../supplier-data/descriptions/"):
 		else:
 			dict_o_dicts[feed]["image_name"] = "0"+str(int(re.search(r'\d+', feed).group()))+".jpeg"
 	print(dict_o_dicts[feed])
-	# response = requests.post(url, data=dict_o_dicts[feed])
+	# response = requests.post(url, json=dict_o_dicts[feed])
 	# response.raise_for_status()
 
 with open('../dict_o_dicts.json', 'w') as outfile:
