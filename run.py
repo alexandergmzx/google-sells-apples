@@ -9,7 +9,7 @@ dict_o_dicts = {}
 
 for feed in os.listdir("../supplier-data/descriptions/"):
 	dict_o_dicts[feed] = {}
-	img_num = int(re.search(r'\d+', feed.readline().rstrip()).group())
+	img_num = int(re.search(r'\d+', feed).group())
 	with open(("../supplier-data/descriptions/"+feed), mode='r', encoding='UTF-8') as file:
 		dict_o_dicts[feed]["name"] = file.readline().rstrip()
 		dict_o_dicts[feed]["weight"] = int(re.search(r'\d+', file.readline().rstrip()).group())
