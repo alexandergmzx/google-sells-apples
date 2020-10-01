@@ -15,7 +15,7 @@ for feed in os.listdir("../supplier-data/descriptions/"):
 		dict_o_dicts[feed]["weight"] = int(re.search(r'\d+', file.readline().rstrip()).group())
 		dict_o_dicts[feed]["description"] = file.readline().rstrip()
 		img_num += 1
-		if img_num < 10:
+		if img_num <= 9:
 			dict_o_dicts[feed]["image_name"] = "00"+str(int(re.search(r'\d+', feed).group()))+".jpeg"
 		else:
 			dict_o_dicts[feed]["image_name"] = "0"+str(int(re.search(r'\d+', feed).group()))+".jpeg"
