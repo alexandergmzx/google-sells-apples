@@ -29,8 +29,8 @@ def main(argv):
 		subject_line = "Error - Available disk space is less than 20%"
 	elif not check_memory_usage() :
 		subject_line = "Error - Available memory is less than 500MB"
-	elif not (socket.gethostbyname(socket.gethostname()) == "127.0.0.1"):
-		subject_line = "Error - localhost cannot be resolved to 127.0.0.1"
+	#elif not (socket.gethostbyname(socket.gethostname()) == "127.0.0.1"):
+	#	subject_line = "Error - localhost cannot be resolved to 127.0.0.1"
 	else:
 		print("Everything is OK :)")
 
