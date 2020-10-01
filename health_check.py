@@ -42,7 +42,7 @@ def main(argv):
 		body = "Please check your system and resolve the issue as soon as possible."
 
 		message = emails.generate2(sender, receiver, subject, body)
-		#emails.send(message)
+		emails.send(message)
 
 if __name__ == "__main__":
   main(sys.argv)
