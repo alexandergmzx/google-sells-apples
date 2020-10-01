@@ -40,7 +40,7 @@ def process_data(data):
   data_string = ""
   for value in data.values():
     data_string += "<br/>" + "<br/>" + "name: " + value["name"] + \
-      "<br/>" + "weigth: " + str(value["weigth"]) + " lbs"
+      "<br/>" + "weight: " + str(value["weight"]) + " lbs"
     #data_list.append(data_string)
   return data_string
 
