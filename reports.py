@@ -53,7 +53,7 @@ def main(argv):
   titulo = "Processed Update on " + datetime.date.today().strftime("%B %d, %Y") # Add the date in international format
   # Like: March 11, 2020
 
-  reports.generate("../tmp/processed.pdf", 
+  reports.generate("../processed.pdf", 
     titulo, processed)
 
   sender = "automation@example.com"
@@ -61,7 +61,7 @@ def main(argv):
   subject = "Upload Completed - Online Fruit Store"
   body = "All fruits are uploaded to our website successfully. A detailed list is attached to this email."
 
-  message = emails.generate(sender, receiver, subject, body,"../tmp/processed.pdf")
+  message = emails.generate(sender, receiver, subject, body,"../processed.pdf")
   #emails.send(message)
 
 if __name__ == "__main__":
